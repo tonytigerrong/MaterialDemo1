@@ -64,3 +64,21 @@
         <button (click)="sidenav.toggle()">toggle</button>
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+<mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+    <button mat-menu-item>Angular</button>
+    <button mat-menu-item>Vue</button>
+    <button mat-menu-item [matMenuTriggerFor]="subMenu">End</button>
+</mat-menu>
+<mat-menu #subMenu="matMenu">
+    <button mat-menu-item>FrontEnd</button>
+    <button mat-menu-item>BackEnd</button>
+</mat-menu>
+<mat-menu #thirdMenu="matMenu">
+    <ng-template matMenuContent let-name="name" let-hobby="hobby">
+        <button mat-menu-item>profit</button>
+        <button mat-menu-item>log out {{ name }} like {{ hobby }}</button>
+    </ng-template>
+</mat-menu>
+<button mat-flat-button [matMenuTriggerData]="{'name':'Tony','hobby':'music'}" [matMenuTriggerFor]="thirdMenu">Menu Tony</button>
+<button mat-flat-button [matMenuTriggerData]="{'name':'David','hobby':'basketball'}" [matMenuTriggerFor]="thirdMenu">Menu David</button>
