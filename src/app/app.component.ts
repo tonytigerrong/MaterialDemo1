@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'MaterialDemo';
   notifications = 223;
   showSpinner = false;
+  opened=false;
   loadData(){
     this.showSpinner = true;
     setTimeout( ()=>{

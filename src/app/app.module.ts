@@ -9,10 +9,12 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
 const MaterailComponents = [
   MatButtonModule, MatButtonToggleModule,
-  MatIconModule,MatBadgeModule,MatProgressSpinnerModule
+  MatIconModule,MatBadgeModule,MatProgressSpinnerModule,
+  MatToolbarModule,MatSidenavModule
   ];
 @NgModule({
   declarations: [

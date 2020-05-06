@@ -44,3 +44,17 @@
     <mat-spinner *ngIf="showSpinner"></mat-spinner>
     <button (click)="loadData()">Load Data</button>
 </div>
+<mat-toolbar color="primary" class="navbar">
+    <div>Codevolution</div>
+    <div>
+        <span>Home</span>
+        <span>About</span>
+        <span>Services</span>
+    </div>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened">Sidenav</mat-sidenav>
+    <mat-sidenav-content>Main
+        <button (click)="opened=!opened">toggle opened</button>
+    </mat-sidenav-content>
+</mat-sidenav-container>
