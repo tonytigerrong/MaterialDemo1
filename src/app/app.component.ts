@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgControlStatusGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +16,8 @@ export class AppComponent {
     setTimeout( ()=>{
       this.showSpinner=false;
     }, 3000);
+  }
+  logState(state){
+    console.log(state);
   }
 }

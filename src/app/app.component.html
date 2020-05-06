@@ -53,8 +53,14 @@
     </div>
 </mat-toolbar>
 <mat-sidenav-container>
-    <mat-sidenav [(opened)]="opened">Sidenav</mat-sidenav>
+    <mat-sidenav
+    (opened)="logState('opened')"
+    (closed)="logState('closed')"
+     #sidenav mode="push" [(opened)]="opened">Sidenav</mat-sidenav>
     <mat-sidenav-content>Main
         <button (click)="opened=!opened">toggle opened</button>
+        <button (click)="sidenav.open()">open</button>
+        <button (click)="sidenav.close()">close</button>
+        <button (click)="sidenav.toggle()">toggle</button>
     </mat-sidenav-content>
 </mat-sidenav-container>
