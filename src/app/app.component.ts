@@ -20,4 +20,7 @@ export class AppComponent {
   logState(state){
     console.log(state);
   }
+  changeTab(tabRef){
+    console.log(tabRef.selectedIndex);
+  }
 }

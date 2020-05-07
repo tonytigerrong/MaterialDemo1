@@ -15,11 +15,16 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatStepperModule } from '@angular/material/stepper';
+
 const MaterailComponents = [
   MatButtonModule, MatButtonToggleModule,
   MatIconModule,MatBadgeModule,MatProgressSpinnerModule,
   MatToolbarModule,MatSidenavModule, MatMenuModule,MatListModule,
-  MatDividerModule,MatExpansionModule
+  MatDividerModule,MatExpansionModule, MatCardModule, MatTabsModule,
+  MatStepperModule
   ];
 @NgModule({
   declarations: [

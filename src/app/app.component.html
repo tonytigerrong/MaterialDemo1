@@ -128,3 +128,30 @@
     </mat-action-row>
 </mat-expansion-panel>
 </mat-accordion>
+<mat-card>
+    <mat-card-title>Card title</mat-card-title>
+    <mat-card-content>This is the card content</mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-flat-button>Login</button>
+    </mat-card-actions>
+</mat-card>
+<mat-tab-group #tabRef (selectedTabChange)="changeTab(tabRef)">
+    <mat-tab label="Angular">Angular Content</mat-tab>
+    <mat-tab label="React">React Content</mat-tab>
+    <mat-tab label="Vue">Vue Content</mat-tab>
+</mat-tab-group>
+<mat-horizontal-stepper>
+    <mat-step label="Shipping Address">
+        <p>Shipping Address Details</p>
+    </mat-step>
+    <mat-step label="Billing Address">
+        <p>Billing Address Details</p>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step label="Place Order">
+        <p>Order Details</p>
+    </mat-step>
+</mat-horizontal-stepper>
