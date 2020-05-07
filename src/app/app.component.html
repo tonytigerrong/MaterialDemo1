@@ -182,3 +182,17 @@
    
 </mat-form-field> {{ selectedValue }}
 
+<form>
+    <mat-form-field>
+        <input matInput [matAutocomplete]="auto" [formControl]="inputControl">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngFor="let option of obserableOptions | async " [value]="option">
+                {{ option }}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
+ 
+    {{ testObserable | async }}
+ 
+

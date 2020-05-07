@@ -20,13 +20,14 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const MaterailComponents = [
   MatButtonModule, MatButtonToggleModule,
   MatIconModule,MatBadgeModule,MatProgressSpinnerModule,
   MatToolbarModule,MatSidenavModule, MatMenuModule,MatListModule,
   MatDividerModule,MatExpansionModule, MatCardModule, MatTabsModule,
-  MatStepperModule, MatInputModule,MatSelectModule
+  MatStepperModule, MatInputModule,MatSelectModule,MatAutocompleteModule
   ];
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ const MaterailComponents = [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,FormsModule,
     MaterailComponents
   ],
   providers: [],
