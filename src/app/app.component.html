@@ -165,4 +165,20 @@
     <input matInput required>
     <mat-hint align="end">Min 5 characters</mat-hint>
 </mat-form-field>
+<mat-form-field>
+    <mat-label>Topic</mat-label>
+    <mat-select [(value)]="selectedValue" multiple>
+        <mat-optgroup label="Web">
+            <mat-option value="angular">Angular</mat-option>
+            <mat-option value="react">React</mat-option>
+            <mat-option value="vue">Vue</mat-option>
+        </mat-optgroup>
+        <mat-optgroup label="Mobile">
+            <mat-option value="IOS">IOS</mat-option>
+            <mat-option value="Android">Android</mat-option>
+        </mat-optgroup>
+        
+    </mat-select>
+   
+</mat-form-field> {{ selectedValue }}
 

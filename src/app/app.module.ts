@@ -19,12 +19,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+
 const MaterailComponents = [
   MatButtonModule, MatButtonToggleModule,
   MatIconModule,MatBadgeModule,MatProgressSpinnerModule,
   MatToolbarModule,MatSidenavModule, MatMenuModule,MatListModule,
   MatDividerModule,MatExpansionModule, MatCardModule, MatTabsModule,
-  MatStepperModule, MatInputModule
+  MatStepperModule, MatInputModule,MatSelectModule
   ];
 @NgModule({
   declarations: [

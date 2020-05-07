@@ -11,6 +11,7 @@ export class AppComponent {
   notifications = 223;
   showSpinner = false;
   opened=false;
+  selectedValue:string;
   loadData(){
     this.showSpinner = true;
     setTimeout( ()=>{
