@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {  FormControl } from '@angular/forms';
 import { Observable,from } from 'rxjs';
 import { map, startWith, filter } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -31,9 +34,16 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class AppComponent implements OnInit{
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  // dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   loadTableData(row){
     console.log(row);
+  }
+  applyFilter(value: string){
+    console.log(value);
+    this.dataSource.filter = value.trim().toLowerCase();
   }
   constructor(private snackbar: MatSnackBar,
               private dialog: MatDialog
@@ -97,7 +107,8 @@ export class AppComponent implements OnInit{
     //   map(x => x + 1),
     //   filter(x => x > 4)
     // );
-    
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
     this.obserableOptions = this.inputControl.valueChanges.pipe(
       //startWith(''),
       map( value=>{

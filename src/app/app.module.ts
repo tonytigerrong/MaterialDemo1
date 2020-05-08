@@ -29,6 +29,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 const MaterailComponents = [
   MatButtonModule, MatButtonToggleModule,
   MatIconModule,MatBadgeModule,MatProgressSpinnerModule,
@@ -36,7 +38,7 @@ const MaterailComponents = [
   MatDividerModule,MatExpansionModule, MatCardModule, MatTabsModule,
   MatStepperModule, MatInputModule,MatSelectModule,MatAutocompleteModule,
   MatCheckboxModule,MatRadioModule,MatDatepickerModule,MatNativeDateModule,
-  MatSnackBarModule,MatDialogModule, MatTableModule 
+  MatSnackBarModule,MatDialogModule, MatTableModule ,MatSortModule,MatPaginatorModule
   ];
 @NgModule({
   declarations: [
