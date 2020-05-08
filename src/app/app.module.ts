@@ -27,7 +27,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
 const MaterailComponents = [
   MatButtonModule, MatButtonToggleModule,
   MatIconModule,MatBadgeModule,MatProgressSpinnerModule,
@@ -35,7 +36,7 @@ const MaterailComponents = [
   MatDividerModule,MatExpansionModule, MatCardModule, MatTabsModule,
   MatStepperModule, MatInputModule,MatSelectModule,MatAutocompleteModule,
   MatCheckboxModule,MatRadioModule,MatDatepickerModule,MatNativeDateModule,
-  MatSnackBarModule
+  MatSnackBarModule,MatDialogModule, MatTableModule 
   ];
 @NgModule({
   declarations: [
