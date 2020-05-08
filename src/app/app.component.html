@@ -194,5 +194,29 @@
 </form>
  
     {{ testObserable | async }}
- 
+ <mat-checkbox>subscribe</mat-checkbox>
+ <br>
+ <mat-checkbox labelPosition="before" color="primary">
+     subscribe
+ </mat-checkbox>
 
+<br>
+<mat-checkbox labelPosition="before" color="warn">
+    subscribe
+</mat-checkbox>
+<br>
+<div >
+    <mat-radio-group [(ngModel)]="selectedValue1" [formControl]="myRadio">
+        <mat-radio-button value="Angular">Angular</mat-radio-button>
+        <mat-radio-button value="React">React</mat-radio-button>
+        <mat-radio-button value="Vue1*******1">Vue</mat-radio-button>
+    </mat-radio-group>
+    <small>{{ selectedValue1 }}</small>
+</div>
+
+<mat-form-field>
+    <input matInput [matDatepicker]="myDatePicker" [matDatepickerFilter]="dateFilter" ><!--[min]="minDate" [max]="maxDate"-->
+    <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+    <mat-datepicker #myDatePicker ></mat-datepicker>
+    <!--startView="multi-year"-->
+</mat-form-field>

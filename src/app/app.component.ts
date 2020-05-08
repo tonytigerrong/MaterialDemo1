@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
   showSpinner = false;
   opened=false;
   selectedValue:string;
-
+  selectedValue1:string;
   options: string[] = ["Angular","React","Vue"];
   objectOptions = [
     { name: 'Angular'},
@@ -23,9 +23,15 @@ export class AppComponent implements OnInit{
     { name: 'Vue'}
   ];
   inputControl = new FormControl('');
+  myRadio = new FormControl('Angular');
   obserableOptions: Observable<string []>;
   testObserable: Observable<number>;
-
+  minDate= new Date();
+  maxDate= new Date(2020,5,15);
+  dateFilter = date => {
+    const day = date.getDay();
+    return day !== 0 && day !== 6;
+  }
   greaterThree(e){
     return e>3;
   }

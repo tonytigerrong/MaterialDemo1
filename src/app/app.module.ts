@@ -22,12 +22,17 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 const MaterailComponents = [
   MatButtonModule, MatButtonToggleModule,
   MatIconModule,MatBadgeModule,MatProgressSpinnerModule,
   MatToolbarModule,MatSidenavModule, MatMenuModule,MatListModule,
   MatDividerModule,MatExpansionModule, MatCardModule, MatTabsModule,
-  MatStepperModule, MatInputModule,MatSelectModule,MatAutocompleteModule
+  MatStepperModule, MatInputModule,MatSelectModule,MatAutocompleteModule,
+  MatCheckboxModule,MatRadioModule,MatDatepickerModule,MatNativeDateModule
   ];
 @NgModule({
   declarations: [
