@@ -220,3 +220,6 @@
     <mat-datepicker #myDatePicker ></mat-datepicker>
     <!--startView="multi-year"-->
 </mat-form-field>
+
+<button mat-button (click)="openSnackBar('Item deleted', 'Undo')">open snackbar window</button>
+<button mat-button (click)="openMyCustomSnackBar()">open custom bar</button>

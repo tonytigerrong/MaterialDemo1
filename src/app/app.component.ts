@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import {  FormControl } from '@angular/forms';
 import { Observable,from } from 'rxjs';
 import { map, startWith, filter } from 'rxjs/operators';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit{
+  constructor(private snackbar: MatSnackBar){
+
+  }
   title = 'MaterialDemo';
   notifications = 223;
   showSpinner = false;
@@ -28,6 +31,22 @@ export class AppComponent implements OnInit{
   testObserable: Observable<number>;
   minDate= new Date();
   maxDate= new Date(2020,5,15);
+  openSnackBar(message,action){
+    let barWindow = this.snackbar.open(message,action,{duration: 2000});
+    barWindow.afterDismissed().subscribe(
+      ()=>{
+        console.log("dismissed snack bar");
+      }
+    );
+    barWindow.onAction().subscribe(
+      ()=>{
+        console.log("onAction, action name");
+      }
+    );
+  }
+  openMyCustomSnackBar(){
+    this.snackbar.openFromComponent(MySnackbarComponent,{duration: 3000});
+  }
   dateFilter = date => {
     const day = date.getDay();
     return day !== 0 && day !== 6;
@@ -87,3 +106,11 @@ export class AppComponent implements OnInit{
     console.log(tabRef.selectedIndex);
   }
 }
+
+@Component(
+  {
+    selector: 'custom-snackbar',
+    template: `<span style='color:orange'>Custom Snackbar</span>`
+  }
+)
+export class MySnackbarComponent {}
