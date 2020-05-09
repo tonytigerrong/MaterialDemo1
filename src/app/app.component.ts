@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {  FormControl } from '@angular/forms';
-import { Observable,from } from 'rxjs';
+import { Observable,from,of } from 'rxjs';
 import { map, startWith, filter } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -94,6 +95,17 @@ export class AppComponent implements OnInit{
   }
   greaterThree(e){
     return e>3;
+  }
+  testPipe(){
+    let test = of(1,2,3,4).pipe(
+      map(x=>x+1), // 2,3,4,5
+      filter(x=>x>2), //3,4,5
+      map(x=>x+1)//4,5,6
+    );
+    test.subscribe(data=>{
+      console.log("testPipe",data);
+    });
+    
   }
   ngOnInit(){
     // let test = [1,2,3,4,5,6,7,8].filter(this.greaterThree);
